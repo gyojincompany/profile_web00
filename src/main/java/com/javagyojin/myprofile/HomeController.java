@@ -52,4 +52,10 @@ public class HomeController {
 		return "question";
 	}
 	
+	@RequestMapping(value = "/contact")
+	public String contact() {		
+		
+		return "contact";
+	}
+	
 }

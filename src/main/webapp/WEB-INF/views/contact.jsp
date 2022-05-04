@@ -7,7 +7,6 @@
 <title>## LeeGyoJin Profile</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/span.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/table.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/board.js"></script>
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -25,31 +24,13 @@
 				<tr>					
 					<td height="500" bgcolor="#D5D5D5" align="center">
 						<table border="0" cellspacing="0" cellpadding="10">							
-							<form action="write" method="post" name="reg_frm">
-								<tr>
-									<td class="td-type01">ID</td>
-									<td><input id="input01" type="text" name="qid" value="GUEST" readonly="readonly"></td>
-								</tr>
-								<tr>
-									<td class="td-type01">NAME</td>
-									<td><input id="input01" type="text" name="qname"></td>
-								</tr>
-								<tr>
-									<td class="td-type01">QUESTION</td>
-									<td><textarea id="input01" name="qcontent" rows="5" cols="26"></textarea></td>
-								</tr>								
-								<tr>
-									<td class="td-type01">E-MAIL</td>
-									<td><input id="input01" type="text" name="qemail"></td>
-								</tr>
-								<tr>
-									<td colspan="2">
-									<input id="button01" type="button" value="글쓰기" onclick="boardConfirm()">
-									<input id="button01" type="button" value="글목록" onclick="javascript:window.location='list'">
-									</td>
-									
-								</tr>
-							</form>						
+							<tr>
+								<td class="td-type02">								
+									안녕하세요 Web Application 백엔드 개발자 이교진입니다.<br>
+									보시고 계신 페이지는 Spring Boot Framework으로 개발되었습니다.<br>
+									웹 서버 백엔드 개발자가 필요하신 분은 <a href="mailto:luckyred@gmail.com">luckyred@gmail.com</a>으로 연락부탁드립니다.
+								</td>
+							</tr>					
 						</table>
 					</td>
 				</tr>			

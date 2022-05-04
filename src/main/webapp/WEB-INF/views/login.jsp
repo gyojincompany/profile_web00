@@ -35,7 +35,7 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-									<input id="button01" type="submit" value="로그인">&nbsp;&nbsp;&nbsp;&nbsp;
+									<input id="button01" type="submit" value="로그인">&nbsp;&nbsp;
 									<input id="button01" type="button" value="회원가입" onclick="javascript:window.location='join'">
 									</td>
 									

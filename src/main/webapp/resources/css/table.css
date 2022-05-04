@@ -49,3 +49,27 @@ td.td-type02{
 	
 }
 
+body {
+	margin:0;
+	padding:0;
+}
+
+a:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #c0c0c0;
+}
+
+#button01:hover {
+	background-color: #666666;
+	
+}

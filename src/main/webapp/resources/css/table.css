@@ -12,3 +12,33 @@ table.t-type02 {
 	font-weight: normal;
 	background-color: #000000;	
 }
+
+td.td-type01{
+	font-size: 20px;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+#input01 {
+	font-family: Arial;
+	font-size: 20px;
+	color: #636363;
+	border:	1px solid #c0c0c0;
+	background-color: #FFFFFF;
+	width: 220px;
+	padding: 5px;
+}
+
+#button01 {
+	border: 2px solid #FFFFFF;
+	background-color: #a0a0a0;
+	width: 175px;
+	height: 40px;
+	padding: 5px;	
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	
+}
+

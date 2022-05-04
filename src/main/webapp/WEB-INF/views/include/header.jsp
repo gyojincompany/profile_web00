@@ -11,8 +11,8 @@
 	<table class="t-type02" width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr height="50">
 			<td width="70%">&nbsp;</td>
-			<td width="5%">home</td>
-			<td width="5%">login</td>
+			<td width="5%"><a href="${pageContext.request.contextPath}/">home</a></td>
+			<td width="5%"><a href="login">login</a></td>
 			<td width="5%">join</td>
 			<td width="5%">profile</td>
 			<td width="5%">question</td>

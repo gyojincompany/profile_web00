@@ -13,9 +13,9 @@
 			<td width="70%">&nbsp;</td>
 			<td width="5%"><a href="${pageContext.request.contextPath}/">home</a></td>
 			<td width="5%"><a href="login">login</a></td>
-			<td width="5%">join</td>
-			<td width="5%">profile</td>
-			<td width="5%">question</td>
+			<td width="5%"><a href="join">join</a></td>
+			<td width="5%"><a href="profile">profile</a></td>
+			<td width="5%"><a href="question">question</a></td>
 			<td width="5%">contact</td>		
 		</tr>
 		<tr>

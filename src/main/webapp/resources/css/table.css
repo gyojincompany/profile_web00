@@ -27,6 +27,14 @@ td.td-type02{
 	font-weight: bold;
 }
 
+td.memberinfo {
+	font-size: 20px;
+	color: #5f5f5f;
+	font-family: malgun;
+	font-weight: bold;
+	
+}
+
 #input01 {
 	font-family: Arial;
 	font-size: 20px;

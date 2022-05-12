@@ -156,4 +156,18 @@ public class HomeController {
 		return "infoModify";
 	}
 	
+	@RequestMapping(value="/infoModifyOk")
+	public String infoModifyOk(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.memberInfoModifyOkDao(request.getParameter("pw"), request.getParameter("name"), request.getParameter("email"), request.getParameter("id"));
+		
+		MemberDto memberDto = dao.loginOkDao(request.getParameter("id"));
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		return "infoModifyOk";
+	}
+	
 }

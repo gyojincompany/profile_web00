@@ -69,7 +69,7 @@ public class HomeController {
 		return "contact";
 	}
 	
-	@RequestMapping(value = "/joinOk")
+	@RequestMapping(value = "/joinOk", method = RequestMethod.POST)
 	public String joinOk(HttpServletRequest request, Model model) {
 		
 		IDao dao = sqlSession.getMapper(IDao.class);
@@ -93,6 +93,12 @@ public class HomeController {
 		}
 		
 		return "joinOk";
+	}
+	
+	@RequestMapping(value="/logout")
+	public String logout() {
+		
+		return "logout";
 	}
 	
 }

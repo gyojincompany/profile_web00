@@ -12,7 +12,7 @@
 	</select>
 	
 	<insert id="writeDao">
-		INSERT INTO q_board(qnum, qid, qname, qcontent, qemail) VALUES (q_board_seq.nextval, #{parm1}, #{parm2}, #{parm3}, #{parm4})
+		INSERT INTO q_board(qnum, qid, qname, qcontent, qemail) VALUES (q_board_seq.nextval, #{param1}, #{param2}, #{param3}, #{param4})
 	</insert>
 	
 	<select id="viewDao" resultType="com.javagyojin.myprofile.dto.BoardDto">
@@ -45,7 +45,7 @@
 	</select>
 	
 	<update id="memberInfoModifyOkDao">
-		UPDATE pmember SET mpw = #{param1}, mname = #{parma2}, memail = #{param3} WHERE mid = #{param4}
+		UPDATE pmember SET mpw = #{param1}, mname = #{param2}, memail = #{param3} WHERE mid = #{param4}
 	</update>
 
 </mapper>

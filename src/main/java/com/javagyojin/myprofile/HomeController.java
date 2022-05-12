@@ -40,6 +40,12 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/index")
+	public String index() {		
+		
+		return "index";
+	}
+	
 	@RequestMapping(value = "/login")
 	public String login() {		
 		
@@ -132,6 +138,22 @@ public class HomeController {
 		}
 		
 		return "loginOk";
+	}
+	
+	@RequestMapping(value="/infoModify")
+	public String infoModify(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		
+		String sessionId = (String) session.getAttribute("id");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		MemberDto memberDto = dao.loginOkDao(sessionId);
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		return "infoModify";
 	}
 	
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.javagyojin.myprofile.dao.IDao;
+import com.javagyojin.myprofile.dto.MemberDto;
 
 /**
  * Handles requests for the application home page.
@@ -99,6 +100,38 @@ public class HomeController {
 	public String logout() {
 		
 		return "logout";
+	}
+	
+	@RequestMapping(value = "/loginOk", method = RequestMethod.POST)
+	public String loginOk(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		int checkIdFlag = dao.checkIdDao(request.getParameter("id"));
+		//입력받은 아이디가 DB에 존재하면 1, 아니면 0이 반환
+		int checkPwFlag = dao.checkPwDao(request.getParameter("id"), request.getParameter("pw"));
+		//입력받은 아이디와 그 아이디의 비밀번호가 일치하면 1, 아니면 0이 반환
+		
+		model.addAttribute("checkIdFlag", checkIdFlag);
+		//checkIdFlag=1이면 로그인 하려는 아이디가 존재함(로그인 가능)
+		model.addAttribute("checkPwFlag", checkPwFlag);
+		//checkPwFlage=1이면 아이디와 그 아이디의 비밀번호가 일치하므로 로그인 가능
+		
+		if (checkPwFlag == 1) {
+			
+			MemberDto memberDto = dao.loginOkDao(request.getParameter("id"));
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("id", memberDto.getMid());			
+			session.setAttribute("name", memberDto.getMname());
+			//로그인 성공시 세션에 아이디와 이름 저장
+			
+			model.addAttribute("mname", memberDto.getMname());
+			model.addAttribute("mid", memberDto.getMid());
+		}
+		
+		return "loginOk";
 	}
 	
 }

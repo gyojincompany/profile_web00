@@ -27,21 +27,32 @@
 						<table border="0" cellspacing="0" cellpadding="10">							
 								<%
 									int checkId = Integer.parseInt(request.getAttribute("checkIdFlag").toString());
+									int checkPw = Integer.parseInt(request.getAttribute("checkPwFlag").toString());
 								
-									if(checkId == 1) {								
+									if(checkId == 0) {								
 								%>				
 									<script language="JavaScript">
-										alert("입력하신 아이디는 이미 사용중입니다. 다른 아이디를 입력하세요.");
+										alert("입력하신 아이디는 존재하지 않는 아이디입니다. 아이디를 확인해 주세요.");
 										history.go(-1);
 									</script>
 								<% 
-									} 
+									} else if (checkPw == 0) {
 								%>
-								
+									<script language="JavaScript">
+										alert("입력하신 비밀번호가 틀립니다. 다시 확인해 주세요.");
+										history.go(-1);
+									</script>
+								<% 
+									} else {
+										
+										session.setAttribute("ValidMem", "yes");
+									}
+								%>
+									
 								<tr>
 									<td class="td-type02">
-										<b>${mname }</b>님 회원 가입을 축하드립니다!<br>
-										가입하신 아이디는 <b>${mid }</b> 입니다.
+										<b>${mname }</b>님 안녕하세요.<br>
+										아이디 <b>${mid }</b>로 로그인에 성공하셨습니다.
 									</td>
 								</tr>
 								

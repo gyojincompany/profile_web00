@@ -28,7 +28,7 @@
 							<form action="write" method="post" name="reg_frm">
 								<tr>
 									<td class="td-type01">ID</td>
-									<td><input id="input01" type="text" name="qid" value="GUEST" readonly="readonly"></td>
+									<td><input id="input01" type="text" name="qid" value="<% if(session.getAttribute("id") != null) {out.print(session.getAttribute("id")); } else {out.print("GUEST");} %>" readonly></td>
 								</tr>
 								<tr>
 									<td class="td-type01">NAME</td>

@@ -26,6 +26,7 @@
 					<td height="500" bgcolor="#D5D5D5" align="center">
 						<table border="0" cellspacing="0" cellpadding="10">							
 							<form action="modify" method="post" name="reg_frm">
+								<input type="hidden" name="qnum" value="${qview.qnum }">
 								<tr>
 									<td class="td-type01">ID</td>
 									<!--  <td><input id="input01" type="text" name="qid" value="<% if(session.getAttribute("id") != null) {out.print(session.getAttribute("id")); } else {out.print("GUEST");} %>" readonly></td> -->

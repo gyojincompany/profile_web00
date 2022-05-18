@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,9 +37,20 @@
 							<tr>
 								<td class="td-type04">${dto.qnum }</td>
 								<td class="td-type04">${dto.qid }</td>
-								<td class="td-type04"><a href="qview?qnum=${dto.qnum }">${dto.qcontent }</a></td>
+								<td class="td-type05" width="500" align="left"><a href="qview?qnum=${dto.qnum }">
+								<c:choose>
+									<c:when test="${fn:length(dto.qcontent) > 25 }">
+										<c:out value="${fn:substring(dto.qcontent,0,24)}" />....
+									</c:when>
+									<c:otherwise>
+										<c:out value="${dto.qcontent }" />
+									</c:otherwise>	
+								</c:choose>
+								</a></td>
 								<td class="td-type04">${dto.qname}</td>
-								<td class="td-type04">${dto.qdate }</td>
+								<td class="td-type04">
+									<c:out value="${fn:substring(dto.qdate,0,16) }"></c:out>
+								</td>
 							</tr>
 							</c:forEach>
 							<tr>

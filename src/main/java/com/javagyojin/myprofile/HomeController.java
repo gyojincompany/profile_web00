@@ -198,7 +198,23 @@ public class HomeController {
 		return "qview";
 	}
 	
+	@RequestMapping(value = "/delete")
+	public String delete(HttpServletRequest request) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		dao.deleteDao(request.getParameter("qnum"));
+		
+		return "redirect:list";
+	}
 	
+	@RequestMapping(value = "/modify")
+	public String modify(HttpServletRequest request) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		dao.modifyDao(request.getParameter("qname"), request.getParameter("qcontent"), request.getParameter("qemail"), request.getParameter("qnum"));		
+		
+		return "redirect:list";
+	}
 	
 	
 	

@@ -189,4 +189,17 @@ public class HomeController {
 		return "list";
 	}
 	
+	@RequestMapping(value = "/qview")
+	public String qview(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		model.addAttribute("qview", dao.viewDao(request.getParameter("qnum")));		
+		
+		return "qview";
+	}
+	
+	
+	
+	
+	
 }

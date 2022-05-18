@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,27 +32,20 @@
 								<td class="td-type03">NAME</td>
 								<td class="td-type03">DATE</td>
 							</tr>
+							<c:forEach items="${list }" var="dto">
 							<tr>
-								<td class="td-type04">10</td>
-								<td class="td-type04">tiger</td>
-								<td class="td-type04">이런거 개발 가능한가요?</td>
-								<td class="td-type04">호랑이</td>
-								<td class="td-type04">2022-5-12 12:30:20</td>
+								<td class="td-type04">${dto.qnum }</td>
+								<td class="td-type04">${dto.qid }</td>
+								<td class="td-type04"><a href="qview?qnum=${dto.qnum }">${dto.qcontent }</a></td>
+								<td class="td-type04">${dto.qname}</td>
+								<td class="td-type04">${dto.qdate }</td>
 							</tr>
+							</c:forEach>
 							<tr>
-								<td class="td-type04">10</td>
-								<td class="td-type04">tiger</td>
-								<td class="td-type04">이런거 개발 가능한가요?</td>
-								<td class="td-type04">호랑이</td>
-								<td class="td-type04">2022-5-12 12:30:20</td>
+								<td colspan="5" align="right">
+									<input id="button01" type="button" value="질문하기" onclick="javascript:window.location='question'">
+								</td>
 							</tr>	
-							<tr>
-								<td class="td-type04">10</td>
-								<td class="td-type04">tiger</td>
-								<td class="td-type04">이런거 개발 가능한가요?</td>
-								<td class="td-type04">호랑이</td>
-								<td class="td-type04">2022-5-12 12:30:20</td>
-							</tr>						
 						</table>
 					</td>
 				</tr>			
